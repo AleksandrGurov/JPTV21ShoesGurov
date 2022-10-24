@@ -5,6 +5,7 @@
  */
 package Managers;
 
+import entity.Clients;
 import entity.Product;
 import java.util.Scanner;
 
@@ -27,10 +28,11 @@ public class ShoeManager {
             public void printListProduct(Product[] Product){
             for (int i = 0; i < Product.length; i++) {
             Product prod = Product[i];
-            System.out.printf(i+1+". %s%n",prod.getName());            
-    }
+            System.out.printf(i+1+". %s%n",prod.getName());}
             }
 }
+    
+         
 
                 
         

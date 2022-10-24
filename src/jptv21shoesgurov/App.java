@@ -5,6 +5,7 @@
  */
 package jptv21shoesgurov;
 
+import Managers.ClientManager;
 import Managers.ShoeManager;
 import entity.Clients;
 import entity.Product;
@@ -19,11 +20,13 @@ public class App {
    private Clients[] Client;
    private Product[] Product;
    private final ShoeManager productManager;
+   private final ClientManager clientManager;
    
    public App(){
    this.Client= new Clients[0];
    this.Product= new Product[0];
    productManager = new ShoeManager();
+   clientManager= new ClientManager();
    }
    
 
@@ -49,13 +52,23 @@ public class App {
                     break;                    
                 case 1:
                     ShoeManager shoeManager= new ShoeManager();
-                    System.out.println("1");
+                    System.out.println("1 dobavlenie producta");
                     this.Product = Arrays.copyOf(this.Product, this.Product.length+1);
                     this.Product[this.Product.length-1] = shoeManager.createShoe();                    
                     break; 
                 case 2:
-                    System.out.println("2. spisok knig");
+                    System.out.println("2. spisok produktov");
                     productManager.printListProduct(Product);
+                case 3:
+                    System.out.println("Задача 3. dobavit pokupatelya");
+                    this.Client = Arrays.copyOf(this.Client, this.Client.length+1);
+                    this.Client[this.Client.length-1] = clientManager.addClient();
+                    break;       
+                case 4:
+                    System.out.println("Задача 4. Список читателей");
+                    clientManager.printListClients(Client);
+                    break;                  
+                
             }
             System.out.println("=======---------========");
 
