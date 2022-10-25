@@ -12,8 +12,8 @@ package entity;
 public class Product {
     private String brand;
     private String name;
-    private String quantity;
-    private String price;
+    private int quantity;
+    private int price;
 
     public Product() {
     }
@@ -26,19 +26,19 @@ public class Product {
         this.brand = brand;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

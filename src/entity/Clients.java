@@ -12,7 +12,7 @@ package entity;
 public class Clients {
     private String firstname;
     private String lastname;
-    private String cash;
+    private int cash;
 
     public Clients() {
     }
@@ -33,11 +33,11 @@ public class Clients {
         this.lastname = lastname;
     }
 
-    public String getCash() {
+    public int getCash() {
         return cash;
     }
 
-    public void setCash(String cash) {
+    public void setCash(int cash) {
         this.cash = cash;
     }
 

@@ -23,12 +23,16 @@ public class ShoeManager {
             Product product = new Product();
             System.out.println("vvedite nazvanie");
             product.setName(scanner.nextLine());
+            System.out.println("vvedite tsenu");
+            product.setPrice(scanner.nextInt());scanner.nextLine();
+            System.out.println("vvedite koli4estvo");
+            product.setQuantity(scanner.nextInt());scanner.nextLine();
             return product;
     } 
             public void printListProduct(Product[] Product){
             for (int i = 0; i < Product.length; i++) {
             Product prod = Product[i];
-            System.out.printf(i+1+". %s%n",prod.getName());}
+            System.out.printf(i+1+". %s%n",prod.getName()+"  "+ prod.getPrice()+" " + prod.getQuantity());}
             }
 }
     

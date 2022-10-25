@@ -14,12 +14,12 @@ public class ClientManager {
         private final Scanner scanner = new Scanner(System.in);
     public Clients addClient(){
         Clients client = new Clients();
-        System.out.print("Имя читателя: ");
+        System.out.print("vvedite imya: ");
         client.setFirstname(scanner.nextLine());
-        System.out.print("Фамилия читателя: ");
+        System.out.print("vvedite familiyu: ");
         client.setLastname(scanner.nextLine());
-        System.out.print("Телефон читателя: ");
-        client.setCash(scanner.nextLine());
+        System.out.print("vvedite koli4estvo deneg klienta: ");
+        client.setCash(scanner.nextInt());scanner.nextLine();
         return client;}
         
         
@@ -29,11 +29,11 @@ public class ClientManager {
             System.out.printf(i+1+".%s %s %s%n"
                     ,k.getFirstname()
                     ,k.getLastname()
-                    ,k.getCash()
+                    ,k.getCash()                    
             );
         }
     }
-}        
+}   
     
 
 
