@@ -5,7 +5,7 @@
  */
 package Managers;
 
-import entity.Clients;
+import entity.Client;
 import entity.Product;
 import java.util.Scanner;
 
@@ -22,7 +22,7 @@ public class ShoeManager {
     public Product createShoe(){
             Product product = new Product();
             System.out.println("vvedite nazvanie");
-            product.setName(scanner.nextLine());
+            product.setProductName(scanner.nextLine());
             System.out.println("vvedite tsenu");
             product.setPrice(scanner.nextInt());scanner.nextLine();
             System.out.println("vvedite koli4estvo");
@@ -32,7 +32,7 @@ public class ShoeManager {
             public void printListProduct(Product[] Product){
             for (int i = 0; i < Product.length; i++) {
             Product prod = Product[i];
-            System.out.printf(i+1+". %s%n",prod.getName()+"  "+ prod.getPrice()+" " + prod.getQuantity());}
+            System.out.printf(i+1+". %s%n",prod.getProductName()+"  "+ prod.getPrice()+" " + prod.getQuantity());}
             }
 }
     

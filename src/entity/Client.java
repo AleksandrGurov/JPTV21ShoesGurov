@@ -9,12 +9,12 @@ package entity;
  *
  * @author pupil
  */
-public class Clients {
+public class Client {
     private String firstname;
     private String lastname;
     private int cash;
 
-    public Clients() {
+    public Client() {
     }
 
     public String getFirstname() {

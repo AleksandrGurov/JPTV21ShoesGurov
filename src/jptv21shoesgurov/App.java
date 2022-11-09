@@ -6,9 +6,11 @@
 package jptv21shoesgurov;
 
 import Managers.ClientManager;
+import Managers.PurchaseManager;
 import Managers.ShoeManager;
-import entity.Clients;
+import entity.Client;
 import entity.Product;
+import entity.Purchase;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -17,16 +19,20 @@ import java.util.Scanner;
  * @author pupil
  */
 public class App {
-   private Clients[] Client;
+   private Client[] Client;
    private Product[] Product;
+   private Purchase[] purchase;
    private final ShoeManager productManager;
    private final ClientManager clientManager;
+   private final PurchaseManager purchaseManager;
    
    public App(){
-   this.Client= new Clients[0];
+   this.Client= new Client[0];
    this.Product= new Product[0];
+   this.purchase = new Purchase[0];
    productManager = new ShoeManager();
    clientManager= new ClientManager();
+   purchaseManager= new PurchaseManager();
    int a= 0;
 
    }
@@ -73,16 +79,19 @@ public class App {
                     break;                  
                 case 5:
                     System.out.println("pokupateli: ");
-                    for(int i = 0; i < Client.length; i++){
-                        System.out.println(i+1);}
-                    int buy1 = scanner.nextInt();
-                    System.out.println("productu: ");
-                    for(int j = 0; j< Product.length; j++){
-                        System.out.println(j+1);}
-                    int buy2 = scanner.nextInt();
-                    int purch = Client[buy1-1].getCash() - Product[buy2-1].getPrice();
-                    Client[buy1-1].setCash(purch);
-
+//                    for(int i = 0; i < Client.length; i++){
+//                        System.out.println(i+1);}
+//                    int buy1 = scanner.nextInt();
+//                    System.out.println("productu: ");
+//                    for(int j = 0; j< Product.length; j++){
+//                        System.out.println(j+1);}
+//                    int buy2 = scanner.nextInt();
+//                    int purch = Client[buy1-1].getCash() - Product[buy2-1].getPrice();
+//                    Client[buy1-1].setCash(purch);
+//
+//                    break;
+                    this.purchase = Arrays.copyOf(this.purchase,this.purchase.length+1);
+                    this.purchase[this.purchase.length-1]=purchaseManager.buyProduct(Product,Client);
                     break;
 
                 case 6:

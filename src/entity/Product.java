@@ -10,20 +10,21 @@ package entity;
  * @author pupil
  */
 public class Product {
-    private String brand;
-    private String name;
+    private String productName;
     private int quantity;
     private int price;
-
+    private int count;
+   
     public Product() {
+
+    }
+       
+    public String getProductName() {
+        return productName;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public int getQuantity() {
@@ -44,17 +45,19 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "brand=" + brand + ", name=" + name + ", quantity=" + quantity + ", price=" + price + '}';
+        return "Products{" + "productname="
+                + productName + ", quantity="
+                + quantity + ", price="
+                + price
+                + '}';
     }
-
-
-
-    public String getName() {
-        return name;
+   
+    public boolean countMinuss(){
+        if(count>0){
+            count--;
+            return true;
+        }
+        return false;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-            
+   
 }
